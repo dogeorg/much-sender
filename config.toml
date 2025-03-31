@@ -1,0 +1,8 @@
+[smtp]
+server = "smtp.domain.com"
+port = 587
+username = "much-email@domain.com"
+password = "so-password"
+
+[security]
+bearer_token = "such-secure-token-here"
