@@ -16,7 +16,7 @@ func main() {
 		log.Fatalf("Much Sad! Error loading config: %v", err)
 	}
 
-	// much Set up HTTP server
+	// Much Set up HTTP server
 	http.HandleFunc("/send-email", email.Handler(cfg))
 
 	addr := fmt.Sprintf(":%d", cfg.Server.Port)
