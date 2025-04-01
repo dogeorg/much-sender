@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -18,8 +19,9 @@ func main() {
 	// much Set up HTTP server
 	http.HandleFunc("/send-email", email.Handler(cfg))
 
-	log.Println("Much Wow! Starting much-sender server on :8080")
-	err = http.ListenAndServe(":8080", nil)
+	addr := fmt.Sprintf(":%d", cfg.Server.Port)
+	log.Printf("Much Wow! Starting much-sender server on %s", addr)
+	err = http.ListenAndServe(addr, nil)
 	if err != nil {
 		log.Fatalf("Much Sad! Server failed: %v", err)
 	}

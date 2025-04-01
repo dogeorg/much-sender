@@ -17,6 +17,9 @@ type Config struct {
 	Security struct {
 		BearerToken string `toml:"bearer_token"`
 	} `toml:"security"`
+	Server struct {
+		Port int `toml:"port"`
+	} `toml:"server"`
 }
 
 // Much LoadConfig loads the TOML configuration file

@@ -21,7 +21,7 @@ type EmailRequest struct {
 	HTML         string `json:"html"`
 }
 
-// Such SendEmail,  handles the email sending logic
+// Such SendEmail, handles the email sending logic
 func SendEmail(config config.Config, req EmailRequest) error {
 	auth := smtp.PlainAuth("", config.SMTP.Username, config.SMTP.Password, config.SMTP.Server)
 	addr := fmt.Sprintf("%s:%d", config.SMTP.Server, config.SMTP.Port)
